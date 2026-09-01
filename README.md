@@ -365,6 +365,10 @@ COUNT()
 SUM()
 AVG()
 ROUND()
+```
+
+Used to calculate employee counts, attrition counts, average values, and percentage-based metrics.
+
 ### Grouping & Filtering
 
 ```sql
@@ -373,11 +377,15 @@ HAVING
 WHERE
 ```
 
+Used to organize employees into meaningful groups and filter analytical results based on business conditions.
+
 ### Conditional Aggregation
 
 ```sql
 COUNT(*) FILTER (WHERE ...)
 ```
+
+Used to calculate metrics such as the number of employees who left within specific employee groups.
 
 ### Conditional Logic
 
@@ -389,11 +397,15 @@ CASE
 END
 ```
 
+Used to create categories such as tenure groups and rule-based employee risk segments.
+
 ### Common Table Expressions
 
 ```sql
 WITH employee_segments AS (...)
 ```
+
+Used to break complex analytical queries into logical and readable stages.
 
 ### Window Functions
 
@@ -403,17 +415,29 @@ RANK() OVER (...)
 PARTITION BY
 ```
 
+Used to calculate overall totals, rankings, and comparisons across employee groups without collapsing the underlying result set.
+
 ### Quantile Segmentation
 
 ```sql
 NTILE(4) OVER (ORDER BY monthly_income)
 ```
 
+Used to divide employees into four salary quartiles for comparative attrition analysis.
+
 ### Multi-Factor Segmentation
 
-The analysis combines multiple employee attributes such as tenure, overtime, and salary quartiles to identify employee segments with different observed attrition rates.
+The analysis combines multiple employee attributes such as:
 
-These techniques were used to move from basic descriptive analysis toward more detailed workforce segmentation and business-oriented insights.
+- Tenure
+- Overtime
+- Salary level
+- Job role
+- Department
+
+to identify employee groups with different observed attrition rates.
+
+These techniques were used to move from basic descriptive analysis toward multi-dimensional workforce analysis and business-oriented employee segmentation.
 
 ---
 
