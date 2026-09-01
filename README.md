@@ -365,3 +365,124 @@ COUNT()
 SUM()
 AVG()
 ROUND()
+### Grouping & Filtering
+
+```sql
+GROUP BY
+HAVING
+WHERE
+```
+
+### Conditional Aggregation
+
+```sql
+COUNT(*) FILTER (WHERE ...)
+```
+
+### Conditional Logic
+
+```sql
+CASE
+    WHEN ...
+    THEN ...
+    ELSE ...
+END
+```
+
+### Common Table Expressions
+
+```sql
+WITH employee_segments AS (...)
+```
+
+### Window Functions
+
+```sql
+SUM(...) OVER ()
+RANK() OVER (...)
+PARTITION BY
+```
+
+### Quantile Segmentation
+
+```sql
+NTILE(4) OVER (ORDER BY monthly_income)
+```
+
+### Multi-Factor Segmentation
+
+The analysis combines multiple employee attributes such as tenure, overtime, and salary quartiles to identify employee segments with different observed attrition rates.
+
+These techniques were used to move from basic descriptive analysis toward more detailed workforce segmentation and business-oriented insights.
+
+---
+
+# Project Structure
+
+```text
+employee-attrition-analysis/
+│
+├── data/
+│   └── README.md
+│
+├── screenshots/
+│   ├── overall_attrition.png
+│   ├── overtime_attrition.png
+│   ├── business_travel_attrition.png
+│   ├── job_role_overtime.png
+│   ├── tenure_overtime.png
+│   ├── salary_quartiles.png
+│   └── risk_segmentation.png
+│
+├── sql/
+│   ├── 01_data_quality.sql
+│   ├── 02_overview.sql
+│   ├── 03_attrition_drivers.sql
+│   └── 04_advanced_analysis.sql
+│
+├── .gitignore
+└── README.md
+```
+
+---
+
+# Limitations
+
+This analysis is based on a single HR dataset and should be interpreted as descriptive analysis rather than causal analysis.
+
+The observed relationships do not prove that a specific factor directly causes an employee to leave.
+
+The rule-based risk segmentation is intended for analytical exploration and should not be treated as a production employee-risk prediction system.
+
+Additional data such as exit interview responses, engagement surveys, workload metrics, manager feedback, and historical compensation changes could provide deeper insight into the underlying reasons for attrition.
+
+---
+
+# Future Improvements
+
+Potential extensions of the project include:
+
+- Building an interactive Power BI or Tableau dashboard
+- Adding statistical significance testing
+- Developing a machine-learning attrition prediction model
+- Incorporating exit interview and employee feedback data
+- Creating automated HR reporting
+- Adding time-series employee turnover analysis if historical data becomes available
+
+---
+
+# Conclusion
+
+This project demonstrates how PostgreSQL and SQL can be used to transform employee data into meaningful workforce insights.
+
+The analysis identified clear differences in observed attrition across overtime, business travel, tenure, salary, job roles, and employee segments. Multi-factor analysis further highlighted specific groups where attrition was substantially higher than the overall workforce rate.
+
+The findings can help HR teams focus retention efforts on specific employee groups rather than relying on broad workforce-wide strategies.
+
+Overall, the project showcases practical SQL skills combined with business-oriented data analysis and interpretation.
+
+---
+
+## Author
+
+Built as a portfolio project to demonstrate practical PostgreSQL, SQL analytics, and data-driven problem-solving skills.
